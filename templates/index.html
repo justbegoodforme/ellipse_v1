@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+{% if filter_shop and filter_shop != 'all' %}
+Показаны результаты для магазина {{ filter_shop }}
+<a href="./edit_shop/{{ filter_shop }}">Редактировать данные магазина</a>
+{% else %}
+Показаны результаты для всех магазинов
+{% endif %}
+<form method="GET">
+    <label><b>Номер магазина</b></label>
+    <select name="shop_id" required>
+          {% for i in bufer_shops %}
+            <option value='all'>Показать все</option>
+            <option value={{ i['shop_id'] }}>{{ i['shop_id'] }} - {{ i['shop_name'] }}</option>
+          {% endfor %}
+    </select>
+    <button type="submit">Показать</button>
+</form>
+<a href=""></a>
+<div id="main_page" style="overflow-x: hidden; overflow-y: auto;">
+    {% for i in range(len) %}
+    <a href="./edit_order/{{ bufer[i]['id'] }}">
+        <div id="order_card" style="background: rgba({{ bufer[i]['color'] }})">
+            <div id="order_id">Заявка: {{ bufer[i]['id'] }}</div>
+            <div>Номер магазина: {{ bufer[i]['shop_id'] }}</div>
+            <div>Название магазина: {{ bufer[i]['shop'] }}</div>
+            <div>Статус заказчика: {{ bufer[i]['status_out'] }}</div>
+            <div>Статус Эллипс: {{ bufer[i]['status_in'] }}</div>
+            <h2>Задачи заявки: {{ bufer[i]['target'] }}</h2>
+        </div>
+    </a>
+    {% endfor %}
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+body {
+    background: rgb(231,185,252);
+    color: #000000;
+    font-family: Trebuchet MS, Arial, Times New Roman;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0px;
+    margin: auto;
+    border: 0px solid;
+}
+
+a { text-decoration: none; color: #000;}
+
+h2 {margin: 2px;}
+
+#main_page {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#order_card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.2);
+    margin: 8px;
+    width: 400px;
+}
+
+#order_id {
+    margin: 2px;
+}

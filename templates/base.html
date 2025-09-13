@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <title>Ellipse</title>
+</head>
+<body>
+
+    <a href="{{ url_for('make_order') }}">Добавление заявки</a>
+    <a href="{{ url_for('add_shop') }}">Добавление магазина</a>
+    <a href="{{ url_for('index') }}">Сбросить фильтры</a>
+  <div id="content">
+    {% block content %}{% endblock %}
+  </div>
+
+</body>
+</html>

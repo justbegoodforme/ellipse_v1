@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+    <div id="content_grid" style="overflow-x: hidden; overflow-y: auto;">
+        Редактирование заявки {{ bufer[0]['id'] }} в магазине {{ bufer[0]['shop_id'] }}, {{ bufer[0]['shop'] }}
+        <form method="POST">
+
+            <label><b>Задача заявки</b></label>
+            <input type="text" placeholder="" name="target" value='{{ bufer[0]['target'] }}' required>
+
+            <label><b>Статус заказчика</b></label>
+            <select name="status_out" required>
+                <option value='В очереди' {% if bufer[0]['status_out'] == 'В очереди' %}selected{% endif %}>В очереди</option>
+                <option value='Уточнение' {% if bufer[0]['status_out'] == 'Уточнение' %}selected{% endif %}>Уточнение</option>
+                <option value='В работе' {% if bufer[0]['status_out'] == 'В работе' %}selected{% endif %}>В работе</option>
+                <option value='Проведение закупки' {% if bufer[0]['status_out'] == 'Проведение закупки' %}selected{% endif %}>Проведение закупки</option>
+                <option value='Приемка' {% if bufer[0]['status_out'] == 'Приемка' %}selected{% endif %}>Приемка</option>
+                <option value='Закрыта' {% if bufer[0]['status_out'] == 'Закрыта' %}selected{% endif %}>Закрыта</option>
+                <option value='Отменена' {% if bufer[0]['status_out'] == 'Отменена' %}selected{% endif %}>Отменена</option>
+            </select>
+
+            <label><b>Статус Эллипс</b></label>
+            <select name="status_in" required>
+                <option value='Выполнена' {% if bufer[0]['status_in'] == 'Выполнена' %}selected{% endif %}>Выполнена</option>
+                <option value='На согласовании' {% if bufer[0]['status_in'] == 'На согласовании' %}selected{% endif %}>На согласовании</option>
+                <option value='Не отработана' {% if bufer[0]['status_in'] == 'Не отработана' %}selected{% endif %}>Не отработана</option>
+                <option value='Отклонена' {% if bufer[0]['status_in'] == 'Отклонена' %}selected{% endif %}>Отклонена</option>
+                <option value='Подписать акт' {% if bufer[0]['status_in'] == 'Подписать акт' %}selected{% endif %}>Подписать акт</option>
+                <option value='Согласовано' {% if bufer[0]['status_in'] == 'Согласовано' %}selected{% endif %}>Согласовано</option>
+            </select>
+
+            <label><b>Материалы</b></label>
+            <textarea name="material" cols=40% rows=3>{{ bufer[0]['material'] }}</textarea>
+
+            <label><b>Комментарии</b></label>
+            <textarea name="comments" cols=40% rows=3>{{ bufer[0]['comments'] }}</textarea>
+
+            <button type="submit">Сохранить</button>
+
+        </form>
+    </div>
+{{ bufer }}
+{% endblock %}

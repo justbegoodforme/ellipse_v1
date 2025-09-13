@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+  <div id="content_grid" style="overflow-x: hidden; overflow-y: auto;">
+    Редактирование магазина {{ shop_id }}
+    <form method="POST">
+        <label><b>Имя магазина</b></label>
+        <input type="text" placeholder="" name="shop_name" value='{{ bufer[0]['shop_name'] }}' required>
+
+        <label><b>Директор магазина</b></label>
+        <input type="text" placeholder="" name="shop_direct" value='{{ bufer[0]['shop_direct'] }}'>
+
+        <label><b>Инженер магазина</b></label>
+        <input type="text" placeholder="" name="shop_engeener" value='{{ bufer[0]['shop_engeener'] }}'>
+
+        <label><b>Безопасник магазина</b></label>
+        <input type="text" placeholder="" name="shop_secure" value='{{ bufer[0]['shop_secure'] }}'>
+
+        <label><b>Телефон директора</b></label>
+        <input type="text" placeholder="" name="direct_phone" value='{{ bufer[0]['direct_phone'] }}'>
+
+        <label><b>Телефон инженера</b></label>
+        <input type="text" placeholder="" name="engeener_phone" value='{{ bufer[0]['engeener_phone'] }}'>
+
+        <label><b>Телефон безопасника</b></label>
+        <input type="text" placeholder="" name="secure_phone" value='{{ bufer[0]['secure_phone'] }}'>
+
+        <button type="submit">Сохранить</button>
+    </form>
+  </div>
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% block content %}
+  <div id="content_grid" style="overflow-x: hidden; overflow-y: auto;">
+    Добавление магазина
+    <form method="POST">
+      <label><b>Номер магазина</b></label>
+        <input type="text" placeholder="" name="shop_id" required>
+
+        <label><b>Имя магазина</b></label>
+        <input type="text" placeholder="" name="shop_name" required>
+
+        <label><b>Директор магазина</b></label>
+        <input type="text" placeholder="" name="shop_direct">
+
+        <label><b>Инженер магазина</b></label>
+        <input type="text" placeholder="" name="shop_engeener">
+
+        <label><b>Безопасник магазина</b></label>
+        <input type="text" placeholder="" name="shop_secure">
+
+        <label><b>Телефон директора</b></label>
+        <input type="text" placeholder="" name="direct_phone">
+
+        <label><b>Телефон инженера</b></label>
+        <input type="text" placeholder="" name="engeener_phone">
+
+        <label><b>Телефон безопасника</b></label>
+        <input type="text" placeholder="" name="secure_phone">
+
+        <button type="submit">Добавить</button>
+    </form>
+  </div>
+{% endblock %}

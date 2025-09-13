@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+  <div id="content_grid" style="overflow-x: hidden; overflow-y: auto;">
+    Добавление заявки
+    <form method="POST">
+      <label><b>Номер заявки</b></label>
+        <input type="text" placeholder="" name="id" required>
+
+        <label><b>Номер магазина</b></label>
+        <select name="shop_id" required>
+          {% for i in dict_shop %}
+            <option value={{ i }}>{{ i }}</option>
+          {% endfor %}
+        </select>
+
+        <label><b>Задача заявки</b></label>
+        <input type="text" placeholder="" name="target" required>
+
+        <button type="submit">Добавить</button>
+    </form>
+  </div>
+{% endblock %}
