@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+  <div id="content_grid" style="overflow-x: hidden; overflow-y: auto;">
+    Импорт заявок
+    {% if bufer[0] == 'Error' %}
+      <br>Файл импорта не найден
+    {% else %}
+      <form method="GET">
+        <label><b>Номер магазина</b></label>
+        <input type="radio" id="ok" value="ok" name="accept"><label for="ok" class="light">Подтверждаю</label>
+        <button type="submit">Импортировать</button>
+      </form>
+      <table border="1">
+        {% for i in bufer %}
+        <tr>
+          <td>
+            {{ i[0] }}
+          </td>
+          <td>
+            {{ i[1] }}
+          </td>
+          <td>
+            {{ i[2] }}
+          </td>
+          <td>
+            {{ i[3] }}
+          </td>
+          <td>
+            {{ i[5] }}
+          </td>
+          <td>
+            {{ i[7] }}
+          </td>
+        </tr>
+        {% endfor %}
+      </table>
+    {% endif %}
+  </div>
+{% endblock %}
